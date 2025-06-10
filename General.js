@@ -3,95 +3,96 @@ document.addEventListener("DOMContentLoaded", function () {
     const link = document.createElement('link');
     link.rel = 'icon';
     link.type = 'image/png';
-    link.href = 'icon/favicon.png';
+    link.href = 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKcezqQ6F4OSf0luVskJn4IQpLIIZlDd76_FySr_j09RlRF4PDt8VTAJ2HhvtEypIuEB1tJlaeovoGgu1B92TA996a-coIY_7qHaKFpTTeSrUIZ5R0e35zk7rzL-fr3_usYBhsOMUIety8w-7Hx2GJRVcyFi95bb0yTx6FZnMQW4Xxg4lzW_1sSf3x8WMu/s500/SALLAU%202012.png';
     document.head.appendChild(link);
 
-    // Reference existing containers
+    // Create search UI
     const search = document.getElementById('search');
-      const searchInput = document.getElementById('searchInput');
-      const searchClear = document.getElementById('searchClear');
-      const postsGrid = document.getElementById('postsGrid');
-      const postCards = document.querySelectorAll('.card');
-      const noResults = document.getElementById('noResults');
-    const contactBtn = document.getElementById("btn");
-    const footer = document.getElementById("footer");
-
-    // Create and append elements
     search.innerHTML = `<div class="search-container">
         <div class="search-box">
           <i class="fas fa-search search-icon"></i>
-          <input type="text" id="searchInput" class="search-input" placeholder="Search activities..." aria-label="Search activities">
+          <input type="text" id="searchInput" class="search-input" placeholder="Search..." aria-label="Search">
           <span class="search-clear" id="searchClear">&times;</span>
         </div>
       </div><br>
-      <!-- No Results Message (hidden by default) -->
-        <div class="no-results" id="noResults" style="display: none;">
-          <i class="fas fa-search-minus"></i>
-          <h3>No result found</h3>
-          <p>Try different search terms</p>
-        </div>`;
-    
+      <div class="no-results" id="noResults" style="display: none;">
+        <i class="fas fa-search-minus"></i>
+        <h3>No result found</h3>
+        <p>Try different search terms</p>
+      </div>`;
+
+    // Create contact button
+    const contactBtn = document.getElementById("btn");
     contactBtn.innerHTML = `<a href="contact.html"><img src="icon/contact1.png" alt="contact"></a>`;
 
-    // Footer
+    // Create footer
+    const footer = document.getElementById("footer");
     footer.innerHTML = `
         <div class="footer-container">
             <br>
             <nav>
-                    <a href="activities.html">Home</a>
-                    <a href="activities.html">Activities</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
+                <a href="home.html">Home</a>
+                <a href="officials.html">Officials</a>
+                <a href="awards.html">Awards</a>
+                <a href="about.html">About</a>
             </nav>
-            <p class="footer-text">© ${new Date().getFullYear()} | Na'eem Everest. All Rights Reserved.</p>
+            <p class="footer-text">© ${new Date().getFullYear()} | Sallau 2012. All Rights Reserved.</p>
             <div class="footer-logo">
                 <a href="https://powersoft1.blogspot.com">
-                <img src="icon/powersoft.png" alt="developed by powersoft">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUMtpHtQPGJBq9NG7_-Dt3lZzzcTAbc6iAP1EPYislndUBNa49eEYzTeJPe4nZZJc7OhvJedo4NCdpcR-sAwKggb6Fm1lnPd4J6qWn9g577iyhZYv7OBrRUcL3ED2qRkGpiq3kX5A92R9jRLgM6BFCjMf5EeN8VSfzzs4y9QV9Yi4yCBWY9MB5YVgHTUs/s300/developed_by_ps.png" alt="developed by powersoft">
                 </a>
-                </div>
-                
-                <a class="privacy" href="Privacy.html">
-                  Privacy Policy
-                </a>
-        </div>
-    `;
+            </div>
+            <a class="privacy" href="Privacy.html">Privacy Policy</a><br><br>
+        </div>`;
+
+    // Get all cards and store their original display styles
+    const cards = document.querySelectorAll('.card');
+    const originalStyles = [];
+    cards.forEach((card, index) => {
+        originalStyles[index] = window.getComputedStyle(card).display;
+    });
 
     // Search functionality
-      searchInput.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        let hasResults = false;
-        
-        postCards.forEach(card => {
-          // Get all searchable content from the card
-          const title = card.querySelector('.post-title').textContent.toLowerCase();
-          const excerpt = card.querySelector('.post-excerpt').textContent.toLowerCase();
-          const category = card.querySelector('.category-badge').textContent.toLowerCase();
-          const date = card.querySelector('.post-date').textContent.toLowerCase();
-          
-          // Combine all searchable content
-          const searchContent = `${title} ${excerpt} ${category} ${date}`;
-          
-          const isVisible = searchContent.includes(searchTerm);
-          card.style.display = isVisible ? 'block' : 'none';
-          if (isVisible) hasResults = true;
+    const searchInput = document.getElementById('searchInput');
+    const searchClear = document.getElementById('searchClear');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('input', function() {
+        const term = this.value.toLowerCase().trim();
+        let found = false;
+
+        cards.forEach((card, index) => {
+            const cardText = card.textContent.toLowerCase();
+            const isMatch = cardText.includes(term);
+            
+            card.style.display = isMatch ? originalStyles[index] : 'none';
+            if (isMatch) found = true;
         });
-        
-        // Show/hide no results message
-        noResults.style.display = hasResults ? 'none' : 'block';
-      });
-      
-      // Clear search functionality
-      searchClear.addEventListener('click', function() {
+
+        noResults.style.display = found ? 'none' : 'block';
+    });
+
+    // Clear search
+    searchClear.addEventListener('click', function() {
         searchInput.value = '';
-        searchInput.dispatchEvent(new Event('input'));
+        cards.forEach((card, index) => {
+            card.style.display = originalStyles[index];
+        });
+        noResults.style.display = 'none';
         searchInput.focus();
-      });
-      
-      // Clear search when pressing Escape key
-      searchInput.addEventListener('keydown', function(e) {
+    });
+
+    // Clear on Escape key
+    searchInput.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-          this.value = '';
-          this.dispatchEvent(new Event('input'));
+            this.value = '';
+            cards.forEach((card, index) => {
+                card.style.display = originalStyles[index];
+            });
+            noResults.style.display = 'none';
         }
-      });
+    });
 });
+
+   const settle = `<div style="display:none; left:0; width:100%; background-color:blue; color:white; position: fixed; top: 0px; z-index: 900; height: 100vh; align-items: center;"><h1>Expr.....</h1></div>`
+   document.body.insertAdjacentHTML('beforebegin', settle);
