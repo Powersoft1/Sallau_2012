@@ -243,14 +243,12 @@ const sidebarCSS = `
   position: fixed;
   top: 0px;
   left: 0px;
+  width: 100%;
   display: flex;
   padding: 5px 10px;
   background: linear-gradient(10deg, #0054e3, #75f9a6);
   color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 900;
   align-items: center;
 }
 .top-nav a {
@@ -283,7 +281,7 @@ const sidebarCSS = `
 .notification-badge {
   position: relative;
   margin-left: auto;
-  margin-right: 10px;
+  margin-right: 30px;
   cursor: pointer;
 }
 
@@ -335,8 +333,8 @@ const sidebarHTML = `
     
     <a href="#">
     <div class="prof">
-      <img src="images/author-img.png" alt="user profile img">
-      <span class="prof-text">2012001</span>
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKcezqQ6F4OSf0luVskJn4IQpLIIZlDd76_FySr_j09RlRF4PDt8VTAJ2HhvtEypIuEB1tJlaeovoGgu1B92TA996a-coIY_7qHaKFpTTeSrUIZ5R0e35zk7rzL-fr3_usYBhsOMUIety8w-7Hx2GJRVcyFi95bb0yTx6FZnMQW4Xxg4lzW_1sSf3x8WMu/s500/SALLAU%202012.png" alt="user profile img">
+      <span class="prof-text">Sallau 2012</span>
     </div>
     </a>
     <button class="toggle-btn">
@@ -366,10 +364,6 @@ const sidebarHTML = `
         <i class="fas fa-chevron-down chevron-icon"></i>
       </a>
       <div class="dropdown-menu">
-        <a href="posts.html" class="dropdown-item">
-          <i class="fas fa-newspaper nav-icon"></i>
-          <span>Posts</span>
-        </a>
         <a href="gallery.html" class="dropdown-item">
           <i class="fas fa-images nav-icon"></i>
           <span>Gallery</span>
@@ -475,7 +469,7 @@ const sidebarHTML = `
   </div>
   
   <div class="pwsft-container">
-    <a href="https://powersoft1.blogspot.com"><img class="pwsft" src="icon/powersoft.png" alt="Developed by PowerSoft"></a>
+    <a href="https://powersoft1.blogspot.com"><img class="pwsft" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUMtpHtQPGJBq9NG7_-Dt3lZzzcTAbc6iAP1EPYislndUBNa49eEYzTeJPe4nZZJc7OhvJedo4NCdpcR-sAwKggb6Fm1lnPd4J6qWn9g577iyhZYv7OBrRUcL3ED2qRkGpiq3kX5A92R9jRLgM6BFCjMf5EeN8VSfzzs4y9QV9Yi4yCBWY9MB5YVgHTUs/s300/developed_by_ps.png" alt="Developed by PowerSoft"></a>
   </div>
 </aside>
 
@@ -487,7 +481,7 @@ const sidebarHTML = `
   </button>
   <div class="top-nav-content">
   <a href="home.html">
-    <img src="images/author-img.png" alt="Logo" class="top-nav-logo">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKcezqQ6F4OSf0luVskJn4IQpLIIZlDd76_FySr_j09RlRF4PDt8VTAJ2HhvtEypIuEB1tJlaeovoGgu1B92TA996a-coIY_7qHaKFpTTeSrUIZ5R0e35zk7rzL-fr3_usYBhsOMUIety8w-7Hx2GJRVcyFi95bb0yTx6FZnMQW4Xxg4lzW_1sSf3x8WMu/s500/SALLAU%202012.png" alt="Logo" class="top-nav-logo">
     <h2>Sallau 2012</h2>
     </a>
     <div class="notification-badge">
@@ -503,7 +497,7 @@ const sidebarHTML = `
 // Initialize the component
 document.addEventListener('DOMContentLoaded', function() {
   // Inject HTML
-  document.body.insertAdjacentHTML('beforebegin', sidebarHTML);
+  document.getElementById('header').innerHTML = sidebarHTML
 
   // Get elements
   const sidebar = document.querySelector('.sidebar');
