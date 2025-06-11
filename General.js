@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <nav>
                 <a href="home.html">Home</a>
                 <a href="officials.html">Officials</a>
-                <a href="awards.html">Awards@</a>
+                <a href="awards.html">Awards</a>
                 <a href="about.html">About</a>
             </nav>
             <p class="footer-text">© ${new Date().getFullYear()} | Sallau 2012. All Rights Reserved.</p>
