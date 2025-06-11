@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Create contact button
     const contactBtn = document.getElementById("btn");
-    contactBtn.innerHTML = `<a href="contact.html"><img src="icon/contact1.png" alt="contact"></a>`;
+    contactBtn.innerHTML = `<a href="contact.html"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjs4IqdV-NeLxohIFK9m-QY0QhpCw6MEWOcDnPLoHqsrpJSmznGXqIBxzPoq_ldu936vJ8QFc9zLth6PmnyoiJyfexj1ZHr6na-VNuAjeZ_QdkXfmddZKtM1D9PERzvDfbYqMDoulEY3_e6Hmtk8VS5IiDMyBDsudMWj3LAAeQeNMRcQuIe_7yxqDSZs9c/s232/contact1.png" alt="contact"></a>`;
 
     // Create footer
     const footer = document.getElementById("footer");
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <nav>
                 <a href="home.html">Home</a>
                 <a href="officials.html">Officials</a>
-                <a href="awards@.html">Awards</a>
+                <a href="awards.html">Awards@</a>
                 <a href="about.html">About</a>
             </nav>
             <p class="footer-text">© ${new Date().getFullYear()} | Sallau 2012. All Rights Reserved.</p>
