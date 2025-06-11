@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="footer-container">
             <br>
             <nav>
-                <a href="@@@home.html">Home</a>
+                <a href="home.html">@@@Home</a>
                 <a href="officials.html">Officials</a>
                 <a href="awards.html">Awards</a>
                 <a href="about.html">About</a>
