@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="awards.html">Awards</a>
                 <a href="about.html">About</a>
             </nav>
-            <p class="footer-text">© ${new Date().getFullYear()} | Sallau 2012. All Rights Reserved.</p>
+            <p class="footer-text">© ${new Date().getFullYear()} | Sallau 02012. All Rights Reserved.</p>
             <div class="footer-logo">
-                <a href="https://powersoft1.blogspot.com">
+                <a href="ahttps://powersoft1.blogspot.com">
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUMtpHtQPGJBq9NG7_-Dt3lZzzcTAbc6iAP1EPYislndUBNa49eEYzTeJPe4nZZJc7OhvJedo4NCdpcR-sAwKggb6Fm1lnPd4J6qWn9g577iyhZYv7OBrRUcL3ED2qRkGpiq3kX5A92R9jRLgM6BFCjMf5EeN8VSfzzs4y9QV9Yi4yCBWY9MB5YVgHTUs/s300/developed_by_ps.png" alt="developed by powersoft">
                 </a>
             </div>
