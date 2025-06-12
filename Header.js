@@ -49,7 +49,9 @@ const sidebarCSS = `
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   height: 20px;
 }
-
+.sidebar-header a {
+  text-decoration: none;
+}
 .prof {
   display: flex;
   align-items: center;
@@ -115,6 +117,14 @@ const sidebarCSS = `
   padding: 20px 0;
   height: calc(100vh - 180px);
   overflow-y: auto;
+  color: white;
+}
+
+.nav-links.active {
+  color: #ece5e5;
+}
+.nav-links:hover {
+  color: red;
 }
 
 /* Custom Scrollbar */
@@ -139,6 +149,7 @@ const sidebarCSS = `
 
 .nav-item {
   position: relative;
+  color: white;
   margin: 5px 10px;
   border-radius: 5px;
   overflow: hidden;
@@ -147,10 +158,12 @@ const sidebarCSS = `
 
 .nav-item.active {
   background-color: rgba(255, 255, 255, 0.1);
+  color: #ece5e5;
 }
 
 .nav-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  color: red;
 }
 
 .nav-link {
