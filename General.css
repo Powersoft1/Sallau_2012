@@ -103,6 +103,7 @@
     color: #f5c857;
     text-decoration: underline;
   }
+
   #up {
     position: fixed;
     bottom: 7%;
@@ -111,10 +112,10 @@
     background-color: #0e47a7;
     color: white;
     padding: 10px;
-    padding-top: 13.5px;
-    padding-bottom: 13.5px;
+    width: 22px;
+    height: 22px;
     text-decoration: none;
-    border-radius: 100px;
+    border-radius: 100%;
   }
   
     /* Improved Search Bar Styles */
