@@ -408,7 +408,7 @@ const sidebarHTML = `
         <i class="fas fa-chevron-down chevron-icon"></i>
       </a>
       <div class="dropdown-menu">
-        <a href="accounts.html" class="dropdown-item">
+        <a href="account.html" class="dropdown-item">
           <i class="fas fa-wallet nav-icon"></i>
           <span>Accounts</span>
         </a>
