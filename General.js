@@ -43,19 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </a>
             </div>
             <a class="privacy" href="Privacy.html">Privacy Policy</a><br><br>
-        </div>`;
-        
-        // Highlight current page with improved active state
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const footerNav = document.querySelectorAll('.f-nav-link');
-  
-  footerNav.forEach(item => {
-    const href = item.getAttribute('href');
-    if (href && (href === currentPath || href === `/${currentPath}`)) {
-      item.style.border = "1px solid red";
-       }
-    });
-      
+        </div>`        
 
     // Initialize search functionality
     initializeSearch();
