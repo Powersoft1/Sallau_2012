@@ -317,4 +317,4 @@
     window.addEventListener('DOMContentLoaded', generatePosts);
   </script>
 </body>
-</html> 
+</html>
