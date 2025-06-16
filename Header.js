@@ -4,7 +4,7 @@
 const sidebarCSS = `
 
 /* Overlay Styles */
-.overlay {
+.hdr .overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,13 +17,13 @@ const sidebarCSS = `
   transition: opacity 0.3s, visibility 0.3s;
 }
 
-.overlay.active {
+.hdr .overlay.active {
   opacity: 1;
   visibility: visible;
 }
 
 /* Sidebar Styles */
-.sidebar {
+.hdr .sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -37,11 +37,11 @@ const sidebarCSS = `
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar.show {
+.hdr .sidebar.show {
   width: 260px;
 }
 
-.sidebar-header {
+.hdr .sidebar-header {
   padding: 20px;
   display: flex;
   align-items: center;
@@ -49,28 +49,28 @@ const sidebarCSS = `
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   height: 20px;
 }
-.sidebar-header a {
+.hdr .sidebar-header a {
   text-decoration: none;
 }
-.prof {
+.hdr .prof {
   display: flex;
   align-items: center;
 }
 
-.prof img {
+.hdr .prof img {
   width: 40px;
   margin-right: 10px;
   border-radius: 50%;
 }
 
-.prof-text {
+.hdr .prof-text {
   font-size: 1.2rem;
   color: white;
   font-weight: 600;
   white-space: nowrap;
 }
 
-.toggle-btn {
+.hdr .toggle-btn {
   background: transparent;
   border: none;
   color: #f8f9fa;
@@ -81,17 +81,17 @@ const sidebarCSS = `
   transition: background-color 0.2s;
 }
 
-.toggle-btn:hover {
+.hdr .toggle-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Share button styles */
-.share-container {
+.hdr .share-container {
   padding: 10px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.share-btn {
+.hdr .share-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,47 +105,47 @@ const sidebarCSS = `
   transition: background-color 0.2s;
 }
 
-.share-btn:hover {
+.hdr .share-btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.share-btn i {
+.hdr .share-btn i {
   margin-right: 8px;
 }
 
-.nav-links {
+.hdr .nav-links {
   padding: 20px 0;
   height: calc(100vh - 180px);
   overflow-y: auto;
   color: white;
 }
 
-.nav-links.active {
+.hdr .nav-links.active {
 }
-.nav-links:hover {
+.hdr .nav-links:hover {
 }
 
 /* Custom Scrollbar */
-.nav-links::-webkit-scrollbar {
+.hdr .nav-links::-webkit-scrollbar {
   width: 6px;
 }
 
-.nav-links::-webkit-scrollbar-track {
+.hdr .nav-links::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 3px;
 }
 
-.nav-links::-webkit-scrollbar-thumb {
+.hdr .nav-links::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 3px;
   transition: background 0.2s;
 }
 
-.nav-links::-webkit-scrollbar-thumb:hover {
+.hdr .nav-links::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.nav-item {
+.hdr .nav-item {
   position: relative;
   color: white;
   margin: 5px 10px;
@@ -154,15 +154,15 @@ const sidebarCSS = `
   transition: background-color 0.2s;
 }
 
-.nav-item.active {
+.hdr .nav-item.active {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.nav-item:hover {
+.hdr .nav-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.nav-link {
+.hdr .nav-link {
   display: flex;
   align-items: center;
   padding: 12px 0px;
@@ -170,26 +170,26 @@ const sidebarCSS = `
   transition: all 0.2s;
 }
 
-.nav-link.active {
+.hdr .nav-link.active {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.nav-text, .nav-links i, .dropdown-item span {
+.hdr .nav-text, .hdr .nav-links i, .hdr .dropdown-item span {
   color: #f8f9fa;
 }
-.nav-icon {
+.hdr .nav-icon {
   font-size: 1.2rem;
   min-width: 40px;
   display: flex;
   justify-content: center;
 }
 
-.nav-text {
+.hdr .nav-text {
   white-space: nowrap;
   margin-right: 10px;
 }
 
-.dropdown-menu {
+.hdr .dropdown-menu {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
@@ -197,11 +197,11 @@ const sidebarCSS = `
   border-radius: 0 0 5px 5px;
 }
 
-.dropdown-menu.show {
+.hdr .dropdown-menu.show {
   max-height: 500px;
 }
 
-.dropdown-item {
+.hdr .dropdown-item {
   padding: 10px 15px 10px 40px;
   display: flex;
   align-items: center;
@@ -209,37 +209,37 @@ const sidebarCSS = `
   transition: background-color 0.2s;
 }
 
-.dropdown-item.active {
+.hdr .dropdown-item.active {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.dropdown-item .nav-icon {
+.hdr .dropdown-item .nav-icon {
   margin-left: -15px;
 }
 
-.dropdown-item:hover {
+.hdr .dropdown-item:hover {
   background-color: red;
 }
 
 /* Chevron Icon Styles */
-.chevron-icon {
+.hdr .chevron-icon {
   margin-left: auto;
   transition: transform 0.3s ease;
   transform: rotate(0deg);
 }
 
-.chevron-icon.rotated {
+.hdr .chevron-icon.rotated {
   transform: rotate(180deg);
 }
 
-.pwsft-container {
+.hdr .pwsft-container {
   display: flex;
   justify-content: center;
   padding: 20px 0;
   margin-top: auto;
 }
 
-.pwsft {
+.hdr .pwsft {
   width: 170px;
   height: 30px;
   border-radius: 10px;
@@ -247,7 +247,7 @@ const sidebarCSS = `
 }
 
 /* Top Navigation */
-.top-nav {
+.hdr .top-nav {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -259,11 +259,11 @@ const sidebarCSS = `
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   align-items: center;
 }
-.top-nav a {
+.hdr .top-nav a {
   display: flex;
   text-decoration: none;
 }
-.top-nav-content {
+.hdr .top-nav-content {
   display: flex;
   align-items: center;
   margin-left: 20px;
@@ -271,14 +271,14 @@ const sidebarCSS = `
   justify-content: space-between;
 }
 
-.top-nav-logo {
+.hdr .top-nav-logo {
   width: 40px;
   height: 40px;
   margin-right: 8px;
   border-radius: 50%;
 }
 
-.top-nav h2 {
+.hdr .top-nav h2 {
   margin: 0;
   color: white;
   font-size: 1.5rem;
@@ -286,18 +286,18 @@ const sidebarCSS = `
   align-items: center;
 }
 
-.notification-badge {
+.hdr .notification-badge {
   position: relative;
   margin-left: auto;
   margin-right: 30px;
   cursor: pointer;
 }
 
-.notification-badge i {
+.hdr .notification-badge i {
   font-size: 1.3rem;
 }
 
-.notification-badge .badge {
+.hdr .notification-badge .badge {
   position: absolute;
   top: -8px;
   right: -8px;
@@ -313,7 +313,7 @@ const sidebarCSS = `
   font-weight: bold;
 }
 
-.mobile-toggle {
+.hdr .mobile-toggle {
   font-size: 1.5rem;
   color: white;
   background: none;
@@ -405,6 +405,10 @@ const sidebarHTML = `
         <a href="efficiencies.html" class="dropdown-item">
           <i class="fas fa-chart-line nav-icon"></i>
           <span>Efficiencies</span>
+        </a>
+        <a href="Phonebook.html" class="dropdown-item">
+          <i class="fas fa-address-book nav-icon"></i>
+          <span>Phonebook</span>
         </a>
       </div>
     </div>
