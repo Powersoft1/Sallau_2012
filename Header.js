@@ -367,28 +367,6 @@ const sidebarHTML = `
     
     <div class="nav-item">
       <a href="#" class="nav-link">
-        <i class="fas fa-photo-video nav-icon"></i>
-        <span class="nav-text">Media</span>
-        <i class="fas fa-chevron-down chevron-icon"></i>
-      </a>
-      <div class="dropdown-menu">
-        <a href="gallery.html" class="dropdown-item">
-          <i class="fas fa-images nav-icon"></i>
-          <span>Gallery</span>
-        </a>
-        <a href="shorts.html" class="dropdown-item">
-          <i class="fas fa-film nav-icon"></i>
-          <span>Shorts Videos</span>
-        </a>
-        <a href="videos.html" class="dropdown-item">
-          <i class="fas fa-video nav-icon"></i>
-          <span>Videos</span>
-        </a>
-      </div>
-    </div>
-    
-    <div class="nav-item">
-      <a href="#" class="nav-link">
         <i class="fas fa-users nav-icon"></i>
         <span class="nav-text">Participants</span>
         <i class="fas fa-chevron-down chevron-icon"></i>
@@ -461,6 +439,28 @@ const sidebarHTML = `
         <a href="rules.html" class="dropdown-item">
           <i class="fas fa-book nav-icon"></i>
           <span>Rules and Regulations</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="nav-item">
+      <a href="#" class="nav-link">
+        <i class="fas fa-photo-video nav-icon"></i>
+        <span class="nav-text">Media</span>
+        <i class="fas fa-chevron-down chevron-icon"></i>
+      </a>
+      <div class="dropdown-menu">
+        <a href="gallery.html" class="dropdown-item">
+          <i class="fas fa-images nav-icon"></i>
+          <span>Gallery</span>
+        </a>
+        <a href="shorts.html" class="dropdown-item">
+          <i class="fas fa-film nav-icon"></i>
+          <span>Shorts Videos</span>
+        </a>
+        <a href="videos.html" class="dropdown-item">
+          <i class="fas fa-video nav-icon"></i>
+          <span>Videos</span>
         </a>
       </div>
     </div>
@@ -607,7 +607,7 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         await navigator.share({
           title: document.title,
-          text: 'Check out this page',
+          text: 'Check out this page for Sallau 2012 website',
           url: window.location.href
         });
       } catch (err) {
