@@ -607,7 +607,7 @@ document.addEventListener('DOMContentLoaded', function() {
       try {
         await navigator.share({
           title: document.title,
-          text: 'Check out this page for Sallau 2012 website',
+          text: 'Check out this page @ Sallau 2012 website',
           url: window.location.href
         });
       } catch (err) {
