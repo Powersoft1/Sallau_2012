@@ -73,7 +73,7 @@ const sidebarCSS = `
 .hdr .toggle-btn {
   background: transparent;
   border: none;
-  color: #f8f9fa;
+  color: white;
   font-size: 1.2rem;
   cursor: pointer;
   padding: 5px;
@@ -100,7 +100,7 @@ const sidebarCSS = `
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 5px;
-  color: #f8f9fa;
+  color: white;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -117,7 +117,6 @@ const sidebarCSS = `
   padding: 20px 0;
   height: calc(100vh - 180px);
   overflow-y: auto;
-  color: white;
 }
 
 .hdr .nav-links.active {
@@ -127,24 +126,27 @@ const sidebarCSS = `
 
 /* Custom Scrollbar */
 .hdr .nav-links::-webkit-scrollbar {
-  width: 6px;
+  width: 16px;
 }
 
 .hdr .nav-links::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 3px;
+  border-radius: 50px;
 }
 
 .hdr .nav-links::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
+  background: #ffffff64;
+  border-radius: 50px;
   transition: background 0.2s;
 }
 
 .hdr .nav-links::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background-color: white;
 }
 
+.hdr .nav-text, .hdr .nav-links i, .hdr .dropdown-item span {
+  color: #f8f9fa;
+}
 .hdr .nav-item {
   position: relative;
   color: white;
@@ -155,11 +157,11 @@ const sidebarCSS = `
 }
 
 .hdr .nav-item.active {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #fffcfc1a;
 }
 
 .hdr .nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #e7aeae49;
 }
 
 .hdr .nav-link {
@@ -174,9 +176,6 @@ const sidebarCSS = `
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.hdr .nav-text, .hdr .nav-links i, .hdr .dropdown-item span {
-  color: #f8f9fa;
-}
 .hdr .nav-icon {
   font-size: 1.2rem;
   min-width: 40px;
@@ -255,7 +254,6 @@ const sidebarCSS = `
   display: flex;
   padding: 5px 10px;
   background: linear-gradient(10deg, #0054e3, #75f9a6);
-  color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   align-items: center;
 }
@@ -291,6 +289,7 @@ const sidebarCSS = `
   margin-left: auto;
   margin-right: 30px;
   cursor: pointer;
+  color: white;
 }
 
 .hdr .notification-badge i {
@@ -302,7 +301,6 @@ const sidebarCSS = `
   top: -8px;
   right: -8px;
   background-color: #ff4757;
-  color: white;
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -622,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Highlight current page with improved active state
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const currentPath = window.location.pathname.split('/').pop() || 'home.html';
   const allNavItems = document.querySelectorAll('.nav-link, .dropdown-item');
   
   allNavItems.forEach(item => {
